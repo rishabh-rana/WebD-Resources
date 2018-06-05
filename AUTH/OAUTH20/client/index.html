@@ -1,0 +1,20 @@
+<!-- THIS IS THE FILE IN CLIENT PUBLIC -->
+...
+
+<script>
+    var accessToken;  //our token retrieved from new window
+
+function authenticate(provider) {
+  window.authenticateCallback = function(token) {  //pass a function to window
+    accessToken = token;
+    console.log(window.ourComponent); //for info remove it
+    window.ourComponent.store.dispatch({type:"loggedin", payload : accessToken}); //set accessToken as token in state
+  };
+
+  window.open('/auth/'+provider);  //open new window for login
+}
+</script>
+
+<div id='root'></div>
+
+...

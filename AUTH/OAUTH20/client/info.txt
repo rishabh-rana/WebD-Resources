@@ -1,0 +1,8 @@
+client side is normal find from other folder's client
+
+for login/signup, just use <a href='/auth/google'> session and cookie will automatically give req.user after login
+
+
+
+
+for JWT, we need setup given in this folder
